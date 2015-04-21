@@ -133,7 +133,6 @@ public class main
 		  
 		  displayMenu(2);
 		BoardFactory boardFactory = null;
-		//displayMenu(2);
 		while (boardFactory == null)
 		{
 			System.out.print("Input: ");
@@ -156,6 +155,7 @@ public class main
 				System.out.println("Error: NOT VALID INPUT");
 			}
 		}
+		// if player 2 is a computer create a computer player
 		if (gameType == 0) 
 			players[1] = new Computer(boardFactory.size);
 		
@@ -200,6 +200,7 @@ public class main
 			System.out.print("Input: ");
 			userInput = input.nextLine();
 			userInput = userInput.toLowerCase();
+			
 			// start game
 			if (userInput.equals("s"))
 			{
@@ -222,6 +223,7 @@ public class main
 				// start game
 				runGame();
 			}
+			// displays menu
 			else if (userInput.equals("?"))
 				displayMenu(0);
 			else if (userInput.equals("q")){

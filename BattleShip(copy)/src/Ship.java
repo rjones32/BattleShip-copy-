@@ -91,6 +91,7 @@ public class Ship
 		return false;
 	}
 	
+	//checks if the ship is sunken
 	public boolean checkSunk()
 	{
 		if (is_sunk)
