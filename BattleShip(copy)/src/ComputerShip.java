@@ -13,7 +13,6 @@ public class ComputerShip implements ShipStrategy
 	
 	public ComputerShip(int newBoardSize){
 		boardSize = newBoardSize;
-		System.out.println(boardSize);
 	}
 	
 	
@@ -25,11 +24,23 @@ public class ComputerShip implements ShipStrategy
 	}
 
 	public void automatedShipPlacer(int newShipSize){
+		
+		
+		int randomChoice;
 		//gets a random x and y coordinate
- 		x = random.nextInt(boardSize);
+		x = random.nextInt(boardSize);
  		y = random.nextInt(boardSize);
  		
- 		shipOrientation = random.nextBoolean()? 'v':'h';		
+ 		//gets a random number to choose orientation
+ 		randomChoice = random.nextInt(1);
+ 		
+ 		if(randomChoice == 0)
+ 			shipOrientation = 'v';
+ 		
+ 		else
+ 			shipOrientation = 'h';
+ 		
+ 		shipSize = newShipSize;
 	}
 
 

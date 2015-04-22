@@ -21,7 +21,7 @@ public  class Player implements Subject
 	{
 		boards = new ArrayList();
 		DefaultShipSize = 2;
-		ship_strategy = new UserShip();	
+		
 	}
 	
 	//Method to add a new board to the list of Observers
@@ -91,7 +91,7 @@ public  class Player implements Subject
 	}
 	
 	public void placeShip()
-	{	int tempCount = numShips;
+	{	
 		
 		newShipPlacement();
 		

@@ -14,6 +14,7 @@ public class Computer extends Player
 		is_user       = false;
 		size          = newSize;
 		move_strategy = new ComputerMove(size);
+		ship_strategy = new ComputerShip(size);	
 	}
 	
 	//method to randomly place ships on the board
@@ -23,14 +24,11 @@ public class Computer extends Player
 		
 		//while there are ships to still place onto board
 	 	while(shipCount!=0){
-	 		
-	 	
 				ship_strategy.automatedShipPlacer(DefaultShipSize); 
 				super.placeShip();
 				
 			if(is_valid==1) 
 						shipCount--;		
-	
 		}
 		
 	}

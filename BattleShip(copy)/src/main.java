@@ -63,11 +63,11 @@ public class main
 			
 			players[i].placeShip();
 			
-			if(players[i].is_user == true){
+			/*if(players[i].is_user == true){
 				System.out.println();
 				System.out.println("Press any key....");
 				input.nextLine();
-			}
+			}*/
 		}
 	}
 
@@ -90,6 +90,17 @@ public class main
 				players[turn % 2].makeMove();
 			}
 			
+			
+			//checks to see if it is two player game
+			//if it is then wait for the next player before showing the next board
+			if(players[turn % 2].is_user == true && gameType==1){
+				players[turn % 2].showBoard(1);
+				System.out.println();
+				System.out.println("Press any key....");
+				input.nextLine();
+				
+			}
+				
 			//checks to see if the state of the game has changed
 			// this is how it decides if the game is over
 			if (players[turn % 2].gameState == GameState.GameOver)
@@ -105,15 +116,7 @@ public class main
 			else
 				System.out.println("InvalidMove:The coordinates you picked are out of range.");
 			
-			//checks to see if it is two player game
-			//if it is then wait for the next player before showing the next board
-			if(players[turn % 2].is_user == true && gameType==1){
-				
-				System.out.println();
-				System.out.println("Press any key....");
-				input.nextLine();
-				
-			}
+			
 		}
 	}
 
@@ -197,7 +200,7 @@ public class main
 		while (!quit)
 		{
 			// get user input for main menu
-			System.out.print("Input: ");
+			System.out.print("Input1: ");
 			userInput = input.nextLine();
 			userInput = userInput.toLowerCase();
 			

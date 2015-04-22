@@ -14,6 +14,7 @@ public class User extends Player
 	public User(){
 		is_user = true;
 		move_strategy = new UserMove();
+		ship_strategy = new UserShip();	
 		input = new Scanner(System.in);	
 	}
 	
@@ -63,7 +64,7 @@ public class User extends Player
 				if(userInput.equals("s"))
 					showBoard(0);
 			}
-			showBoard(1);
+			
 		}
 		
 		
